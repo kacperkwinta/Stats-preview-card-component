@@ -1,10 +1,10 @@
 :root {
-  --primar-1:rgb(9, 11, 26);
+  --primary-1: rgb(9, 11, 26);
   --primary-2: rgb(27, 25, 56);
   --primary-3: hsl(277, 64%, 61%);
-  --neutral-1:hsl(0, 0%, 100%);
-  --neutral-2:hsla(0, 0%, 100%, 0.75);
-  --neutral-3:hsla(0, 0%, 100%, 0.6);
+  --neutral-1: hsl(0, 0%, 100%);
+  --neutral-2: hsla(0, 0%, 100%, 0.75);
+  --neutral-3: hsla(0, 0%, 100%, 0.6);
 }
 
 * {
@@ -15,19 +15,112 @@
 
 html {
   font-size: 62.5%;
-  font-family: "Inter", sans-serif;
   font-family: "Lexend Deca", sans-serif;
 }
 
 body {
+  background-color: var(--primary-1);
   font-size: 1.5rem;
+
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+article {
+  color: var(--neutral-1);
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.box-text {
+  width: 54rem;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  padding: 6.4rem;
+  padding-right: 9.6rem;
+  background-color: var(--primary-2);
+}
+
+.hero-heading {
+  margin-bottom: 2.4rem;
+  font-size: 3rem;
+}
+
+.hero-heading span {
+  color: var(--primary-3);
+}
+
+.hero-describe {
+  font-family: "Inter", sans-serif;
+  color: var(--neutral-3);
+  line-height: 1.7;
+  margin-bottom: 9.25rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6rem;
+}
+
+.stats-text-bold {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.stats-text-thin {
+  font-weight: 400;
+  font-size: 1.1rem;
+  font-family: "Inter", sans-serif;
+  color: var(--neutral-3);
+  letter-spacing: 2px;
+}
+
+.box-img {
+  position: relative;
+}
+
+.image-color-effect {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(277, 100%, 42%, 0.65);
+  filter: saturate(66%);
+}
+
+img {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: block;
+}
+
+.hidden {
+  display: none;
 }
 
 /* footer */
 .attribution {
   font-size: 11px;
   text-align: center;
+  color: var(--neutral-3);
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--primary-3);
+}
+
+/* BELOW 1100PX */
+@media (max-width: 68.75em) {
+article {
+  grid-template-columns: 1fr;
+}
 }
